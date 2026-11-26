@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Desk &amp; Room — component gallery</title>
+  <meta name="description" content="Static component gallery for the Desk &amp; Room dual-scale design system.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the gallery</a>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="eyebrow">Desk &amp; Room · Pass 2</p>
+      <h1>Component gallery</h1>
+      <p class="lede">
+        A static gallery of the same components in <strong>Desk</strong> and
+        <strong>Room</strong> modes, side by side. Status is always shown with a
+        shape and a text label, never colour alone. No JavaScript is required.
+      </p>
+      <nav aria-label="Gallery sections">
+        <ul class="jump-list">
+          <li><a href="#desk-mode">Desk mode</a></li>
+          <li><a href="#room-mode">Room mode</a></li>
+          <li><a href="#notes">Notes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <section class="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">How to read this gallery</h2>
+      <p>
+        Both columns use the same tokens from <code>tokens.json</code> and the generated
+        <code>styles/tokens.css</code>. Only the mode attributes differ. Desk is dense and
+        laptop-sized; Room is projected and much larger. The Room column uses seat codes
+        instead of pupil names.
+      </p>
+      <ul class="plain-list">
+        <li>Desk sample: 15 px body text and 32 px minimum targets.</li>
+        <li>Room sample: 32 px body text and 64 px minimum targets.</li>
+        <li>Room shows at most six pupils per page before paging.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="modes-heading">
+      <h2 id="modes-heading">Both modes, side by side</h2>
+
+      <div class="mode-grid">
+        <section class="mode-panel" id="desk-mode" data-mode="desk" aria-labelledby="desk-heading">
+          <header class="mode-panel__header">
+            <p class="mode-panel__label">Desk · 15 px body · 32 px targets</p>
+            <h3 id="desk-heading">Desk mode</h3>
+            <p class="mode-panel__summary">Dense laptop view with private pupil labels.</p>
+          </header>
+
+          <section class="component" aria-labelledby="desk-pupils">
+            <h4 id="desk-pupils">Pupil rows</h4>
+            <ul class="pupil-list">
+              <li class="pupil-row" data-status="ok">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">On track</span>
+                </span>
+                <span class="pupil-name">Pupil 01</span>
+                <span class="pupil-meta">Working step 3</span>
+              </li>
+              <li class="pupil-row" data-status="stuck">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Stuck</span>
+                </span>
+                <span class="pupil-name">Pupil 04</span>
+                <span class="pupil-meta">Same step for 4 min</span>
+              </li>
+              <li class="pupil-row" data-status="idle">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Idle</span>
+                </span>
+                <span class="pupil-name">Pupil 07</span>
+                <span class="pupil-meta">No change for 6 min</span>
+              </li>
+              <li class="pupil-row" data-status="not-started">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Not started</span>
+                </span>
+                <span class="pupil-name">Pupil 12</span>
+                <span class="pupil-meta">Joined the lesson</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="component" aria-labelledby="desk-buttons">
+            <h4 id="desk-buttons">Buttons</h4>
+            <div class="button-row">
+              <div class="button-sample">
+                <button class="button" type="button">Start task</button>
+                <span class="note">Default</span>
+              </div>
+              <div class="button-sample">
+                <button class="button button--hover" type="button">Start task</button>
+                <span class="note">Hover (static sample)</span>
+              </div>
+              <div class="button-sample">
+                <button class="button button--focus" type="button">Start task</button>
+                <span class="note">Focus-visible (static sample)</span>
+              </div>
+              <div class="button-sample">
+                <button class="button" type="button" disabled>Start task</button>
+                <span class="note">Disabled</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="component" aria-labelledby="desk-toggle">
+            <h4 id="desk-toggle">Desk / Room toggle</h4>
+            <div class="mode-toggle" role="group" aria-label="View mode, Desk sample">
+              <button class="mode-toggle__option" type="button" aria-pressed="true">Desk</button>
+              <button class="mode-toggle__option" type="button" aria-pressed="false">Room</button>
+            </div>
+            <p class="note">Desk is active in this sample. The change is announced as a state change, not a new page.</p>
+          </section>
+
+          <section class="component" aria-labelledby="desk-banners">
+            <h4 id="desk-banners">Banners</h4>
+
+            <section class="banner banner--empty" aria-labelledby="desk-empty">
+              <h5 id="desk-empty">No task running</h5>
+              <p>The lesson is open. Start the task when the class is ready.</p>
+              <p class="banner__actions">
+                <button class="button" type="button">Start task</button>
+              </p>
+            </section>
+
+            <section class="banner banner--loading" aria-labelledby="desk-loading" aria-busy="true">
+              <h5 id="desk-loading">Loading class</h5>
+              <p>Fetching the roster and the latest working steps.</p>
+              <div class="skeleton" aria-hidden="true"></div>
+              <div class="skeleton skeleton--short" aria-hidden="true"></div>
+              <p class="note">The loading status is announced once, not repeatedly.</p>
+            </section>
+
+            <section class="banner banner--connection" aria-labelledby="desk-connection">
+              <h5 id="desk-connection">
+                <span class="status" data-status="stuck">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Not live</span>
+                </span>
+              </h5>
+              <p>Last updated 10:24. Rows stay readable but are cached. Retry when the connection returns.</p>
+              <p class="banner__actions">
+                <button class="button" type="button">Retry connection</button>
+              </p>
+            </section>
+
+            <section class="banner banner--finished" aria-labelledby="desk-finished">
+              <h5 id="desk-finished">
+                <span class="status" data-status="ok">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Finished</span>
+                </span>
+              </h5>
+              <p>The lesson has ended. Review up to three follow-ups, then return to the class list.</p>
+              <p class="banner__actions">
+                <button class="button" type="button">Review follow-ups</button>
+              </p>
+            </section>
+          </section>
+
+          <section class="component" aria-labelledby="desk-focus">
+            <h4 id="desk-focus">Focus ring</h4>
+            <p class="focus-demo">
+              <button class="button" type="button">Tab to this button</button>
+              <span class="focus-sample">Visible focus ring sample</span>
+            </p>
+            <p class="note">The ring uses the focus token width and offset; it is never removed.</p>
+          </section>
+        </section>
+
+        <section class="mode-panel" id="room-mode" data-mode="room" aria-labelledby="room-heading">
+          <header class="mode-panel__header">
+            <p class="mode-panel__label">Room · 32 px body · 64 px targets</p>
+            <h3 id="room-heading">Room mode</h3>
+            <p class="mode-panel__summary">Projected view with seat codes instead of names.</p>
+          </header>
+
+          <section class="component" aria-labelledby="room-pupils">
+            <h4 id="room-pupils">Pupil rows (seat codes)</h4>
+            <ul class="pupil-list">
+              <li class="pupil-row" data-status="ok">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">On track</span>
+                </span>
+                <span class="pupil-name">Seat 01</span>
+                <span class="pupil-meta">Working step 3</span>
+              </li>
+              <li class="pupil-row" data-status="stuck">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Stuck</span>
+                </span>
+                <span class="pupil-name">Seat 04</span>
+                <span class="pupil-meta">Same step for 4 min</span>
+              </li>
+              <li class="pupil-row" data-status="idle">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Idle</span>
+                </span>
+                <span class="pupil-name">Seat 07</span>
+                <span class="pupil-meta">No change for 6 min</span>
+              </li>
+              <li class="pupil-row" data-status="not-started">
+                <span class="status">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Not started</span>
+                </span>
+                <span class="pupil-name">Seat 12</span>
+                <span class="pupil-meta">Joined the lesson</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="component" aria-labelledby="room-buttons">
+            <h4 id="room-buttons">Buttons</h4>
+            <div class="button-row">
+              <div class="button-sample">
+                <button class="button" type="button">Start task</button>
+                <span class="note">Default</span>
+              </div>
+              <div class="button-sample">
+                <button class="button button--hover" type="button">Start task</button>
+                <span class="note">Hover (static sample)</span>
+              </div>
+              <div class="button-sample">
+                <button class="button button--focus" type="button">Start task</button>
+                <span class="note">Focus-visible (static sample)</span>
+              </div>
+              <div class="button-sample">
+                <button class="button" type="button" disabled>Start task</button>
+                <span class="note">Disabled</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="component" aria-labelledby="room-toggle">
+            <h4 id="room-toggle">Desk / Room toggle</h4>
+            <div class="mode-toggle" role="group" aria-label="View mode, Room sample">
+              <button class="mode-toggle__option" type="button" aria-pressed="false">Desk</button>
+              <button class="mode-toggle__option" type="button" aria-pressed="true">Room</button>
+            </div>
+            <p class="note">Room is active in this sample. Escape or the toggle returns to Desk.</p>
+          </section>
+
+          <section class="component" aria-labelledby="room-banners">
+            <h4 id="room-banners">Banners</h4>
+
+            <section class="banner banner--empty" aria-labelledby="room-empty">
+              <h5 id="room-empty">No task running</h5>
+              <p>The lesson is open. Start the task when the class is ready.</p>
+              <p class="banner__actions">
+                <button class="button" type="button">Start task</button>
+              </p>
+            </section>
+
+            <section class="banner banner--loading" aria-labelledby="room-loading" aria-busy="true">
+              <h5 id="room-loading">Loading class</h5>
+              <p>Fetching the roster and the latest working steps.</p>
+              <div class="skeleton" aria-hidden="true"></div>
+              <div class="skeleton skeleton--short" aria-hidden="true"></div>
+              <p class="note">The loading status is announced once, not repeatedly.</p>
+            </section>
+
+            <section class="banner banner--connection" aria-labelledby="room-connection">
+              <h5 id="room-connection">
+                <span class="status" data-status="stuck">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Not live</span>
+                </span>
+              </h5>
+              <p>Last updated 10:24. Rows stay readable but are cached. Retry when the connection returns.</p>
+              <p class="banner__actions">
+                <button class="button" type="button">Retry connection</button>
+              </p>
+            </section>
+
+            <section class="banner banner--finished" aria-labelledby="room-finished">
+              <h5 id="room-finished">
+                <span class="status" data-status="ok">
+                  <span class="status-shape" aria-hidden="true"></span>
+                  <span class="status-label">Finished</span>
+                </span>
+              </h5>
+              <p>The lesson has ended. Review up to three follow-ups, then return to the class list.</p>
+              <p class="banner__actions">
+                <button class="button" type="button">Review follow-ups</button>
+              </p>
+            </section>
+          </section>
+
+          <section class="component" aria-labelledby="room-focus">
+            <h4 id="room-focus">Focus ring</h4>
+            <p class="focus-demo">
+              <button class="button" type="button">Tab to this button</button>
+              <span class="focus-sample">Visible focus ring sample</span>
+            </p>
+            <p class="note">The ring uses the focus token width and offset; it is never removed.</p>
+          </section>
+        </section>
+      </div>
+    </section>
+
+    <section class="notes" id="notes" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Notes</h2>
+      <ul class="plain-list">
+        <li>This gallery is static. The toggle shows both pressed states; it does not change the page.</li>
+        <li>Hover and focus-visible are shown as static samples in addition to the real CSS states.</li>
+        <li>Room mode uses seat codes; pupil labels stay on the Desk view.</li>
+        <li>Colour is not the only status cue: every status also has a shape and a text label.</li>
+        <li>Reduced motion sets the motion tokens to 0 ms; the skeleton becomes static.</li>
+      </ul>
+      <p>
+        Read the <a href="../docs/design-system/index.md">design-system notes</a> or the
+        <a href="../docs/design-system/contrast.md">generated contrast table</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Desk &amp; Room · synthetic class data only · design-process showcase</p>
+  </footer>
+</body>
+</html>

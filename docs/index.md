@@ -1,8 +1,8 @@
-# Desk & Room — design process, Pass 1
+# Desk & Room — design process, Pass 2
 
-A landing page for the Pass 1 artefacts of **Desk & Room**, a teacher's live-lesson board that works on a small laptop (**Desk**) and when projected to the whole class (**Room**).
+A landing page for the Pass 2 artefacts of **Desk & Room**, a teacher's live-lesson board that works on a small laptop (**Desk**) and when projected to the whole class (**Room**).
 
-**Stage:** design process. **There is no prototype yet.** This pass contains research notes and flow documents only.
+**Stage:** design process. **There is no interactive prototype yet.** Pass 2 adds a dual-scale design system and a static component gallery on top of the Pass 1 research notes and flow documents.
 
 - [Read the plan](../PLAN.md) for the concept, passes and guardrails.
 - [Read the project README](../README.md) for the short version.
@@ -21,6 +21,9 @@ A landing page for the Pass 1 artefacts of **Desk & Room**, a teacher's live-les
 | Research | [Interview guide](research/interview-guide.md) | A teacher interview plan marked **not yet run**. | `assumption` |
 | Flows | [Sitemap](flows/sitemap.md) | Class list → Live lesson → Pupil peek → After-class strip; Room is a state of Live lesson. | `assumption` |
 | Flows | [Core flow and states](flows/core-flow.md) | Core flow plus empty, loading, connection-lost and finished states, with accessibility and privacy notes. | `assumption` |
+| Design system | [Tokens and dual-scale system](design-system/index.md) | Token pipeline, Desk/Room modes, the status shape + label rule, focus and reduced motion, and how to run the checks. | `self-review` |
+| Design system | [Contrast table](design-system/contrast.md) | Generated WCAG 2.x contrast ratios for text and status colours in both modes, treated as a design target. | `self-review` |
+| Gallery | [Static component gallery](../gallery/index.html) | Every component state in both modes side by side, with seat codes in the Room column. | `synthetic` |
 
 ---
 
@@ -39,10 +42,11 @@ No quotes, participants, interviews, usability results or numbers presented as f
 
 ## What is not here
 
-- No prototype, no clickable demo and no component library.
+- No interactive prototype, no clickable demo and no reusable component library.
 - No usability results, no heuristic review and no case study.
 - No real schools, classes, pupils, employers, vendors or commercial products.
 - No compliance or legal claims. Accessibility and privacy are design targets and notes.
+- No dark theme. The token set is light only.
 
 ---
 
@@ -50,3 +54,6 @@ No quotes, participants, interviews, usability results or numbers presented as f
 
 - [Plan](../PLAN.md)
 - [README](../README.md)
+- [Design system](design-system/index.md)
+- [Contrast table](design-system/contrast.md)
+- [Component gallery](../gallery/index.html)
